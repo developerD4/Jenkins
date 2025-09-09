@@ -2,7 +2,7 @@ pipeline{
   agent any
 
   tools{
-    maven 'MAVEN_HOME'
+    maven 'Maven_Home'
   }
   stages{
     stage('Checkout'){
@@ -33,7 +33,7 @@ pipeline{
       }
     }
   }
-  Post{
+  post{
     failure{
       echo 'Built Failed'
     }
