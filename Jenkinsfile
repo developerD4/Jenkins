@@ -7,7 +7,7 @@ pipeline{
   stages{
     stage('Checkout'){
       steps{
-        git branch: 'branch',url:'https://github.com/developerD4/Jenkins.git', git credentialsId:  'Git-logIn-access'
+        git branch: 'branch', url:'https://github.com/developerD4/Jenkins.git', credentialsId:  'Git-logIn-access'
       }
     }
     stage('Built'){
