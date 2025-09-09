@@ -4,6 +4,9 @@ pipeline{
   tools{
     maven 'Maven_Home'
   }
+  options{
+    skipDefaultCheckout(true)
+  }
   stages{
     stage('Checkout'){
       steps{
