@@ -52,6 +52,7 @@ public class MainWithCsvReport {
         String title = page.title();
         boolean status = title.contains("OpenCart - Open Source Shopping Cart Solution");
         Assert.assertTrue(status, "Title mismatch!");
+        System.out.println("Test Case ----- Passed, Title Matched");
         writeCsv("TC001", status ? "PASSED" : "FAILED", "Verify Page Title contains 'OpenCart - Open Source Shopping Cart Solution'");
     }
 
@@ -60,6 +61,7 @@ public class MainWithCsvReport {
     	Locator btn = page.locator(".btn btn-primary subscribe");
         boolean status = btn != null;
         Assert.assertTrue(status, "Button not found!");
+        System.out.println("Test Case ----- Passed, Button Found");
         writeCsv("TC002", status ? "PASSED" : "FAILED", "Verify 'Get Started' button is present");
     }
 
