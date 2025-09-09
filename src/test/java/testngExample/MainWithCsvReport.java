@@ -32,7 +32,7 @@ public class MainWithCsvReport {
     @BeforeMethod
     public void setupTest() {
         page = browser.newPage();
-        page.navigate("https://winvinaya.com/");
+        page.navigate("https://www.opencart.com/");
         startTime = System.currentTimeMillis();
     }
 
@@ -50,14 +50,14 @@ public class MainWithCsvReport {
     @Test
     public void testPageTitle() {
         String title = page.title();
-        boolean status = title.contains("WinVinaya InfoSystems");
+        boolean status = title.contains("OpenCart - Open Source Shopping Cart Solution");
         Assert.assertTrue(status, "Title mismatch!");
-        writeCsv("TC001", status ? "PASSED" : "FAILED", "Verify Page Title contains 'WinVinaya InfoSystems'");
+        writeCsv("TC001", status ? "PASSED" : "FAILED", "Verify Page Title contains 'OpenCart - Open Source Shopping Cart Solution'");
     }
 
     @Test
     public void testRoleBasedLocator() {
-        Locator btn = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Get Stared"));
+    	Locator btn = page.locator(".btn btn-primary subscribe");
         boolean status = btn != null;
         Assert.assertTrue(status, "Button not found!");
         writeCsv("TC002", status ? "PASSED" : "FAILED", "Verify 'Get Started' button is present");
